@@ -177,47 +177,20 @@ $('#add-train-button').on('click', function(event){
     var freqInput = childSnapshot.val().freq;
 
     
-    // var arrivalMoment = moment(arrivalInput, "HH:mm");
+  
 
-    // var currentTime = moment(); 
+  // DIFFERENCE BETWEEN TRAIN ARRIVAL AND CURRENT TIME
+  var diffTime = moment().diff(moment(arrivalInput, "H:mm"), "minutes");
 
-    // var minutesAway = currentTime.diff(arrivalMoment, 'minutes');
-    // var minutesSolved = minutesAway % freqInput; 
-    // var awayTrain = freqInput - minutesSolved; 
+  // REAMINDER FROM DIVIDING TIME DIFFERENCE AND FREQUENCY
+  var tLeft = diffTime % freqInput;
+ 
+  // NUMBER OF MINUTES UNTIL THE NEXT TRAIN
+  var minutesToNext = freqInput - tLeft;
+ console.log("MINUTES TILL TRAIN: " + minutesToNext);
 
-    // var nextArrival = currentTime.add(awayTrain, 'minutes'); 
-    // var arrivalTime = nextArrival.format('HH:mm'); 
-    
-
-  // Assumptions
-//   var tFrequency = 3;
-
-//   // Time is 3:30 AM 
-//   var firstTime = "03:30";
-
-//   // First Time (pushed back 1 year to make sure it comes before current time)
-  var arrivalInputConverted = moment(arrivalInput, "HH:mm");
-//   console.log(arrivalInputConverted);
-
-  // Current Time
-  var currentTime = moment();
- // console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
-
-  // Difference between the times
-  var diffTime = moment().diff(moment(arrivalInput), "minutes");
-  //console.log("DIFFERENCE IN TIME: " + diffTime);
-
-  // Time apart (remainder)
-  var tRemainder = diffTime % freqInput;
- // console.log(tRemainder);
-
-  // Minute Until Train
-  var minutesToNext = freqInput - tRemainder;
- // console.log("MINUTES TILL TRAIN: " + minutesToNext);
-
-  // Next Train
-  var nextTrainConverted = moment().add(minutesToNext, "minutes");
- // console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+  // NEXT TRAIN ARRIVAL
+  var nextTrainConverted = moment().add(minutesToNext, "minutes").format("H:mm");
 
 
 
@@ -226,8 +199,8 @@ $('#add-train-button').on('click', function(event){
         $('<td>').text(trainName),
         $('<td>').text(destInput),
         $('<td>').text(freqInput),
-        $('<td>').text(arrivalInput),
-        $('<td>').text(nextTrainConverted)
+        $('<td>').text(nextTrainConverted),
+        $('<td>').text(minutesToNext)
     );
 
     $('#train-table > tbody').append(newTrain);

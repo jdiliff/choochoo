@@ -1,3 +1,7 @@
+.jumbotron {
+    height: 25%; 
+}
+
 th {
      font-family: Fredericka the Great;
      font-size: 25px; 
@@ -10,7 +14,7 @@ th {
     font-family: Fredericka the Great; 
     font-size: 100px; 
     text-align: center;
-    padding-top: 30px; 
+    padding-top: 5px; 
 }
 
 table {
