@@ -1,0 +1,104 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        <!-- Train Schedule -->
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+   <link href="https://fonts.googleapis.com/css?family=Cuprum|Fredericka+the+Great|Thasadith" rel="stylesheet">
+</head>
+
+<body>
+       
+    <div class="container col-10">
+
+        <div class="jumbotron jumbotron-billboard">
+            <div class="img"><img src="http://cdn.shopify.com/s/files/1/1412/0546/products/JC_Spock_Double_Steam_-_smaller_grande.jpg?v=1536337555" width="100%"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p id="page-title">The Train Schedule</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <img id = "left-image" class= "img-fluid " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd3z3RyD1KK2OWkceI1F5HZ23rwTOjULUgqj-XA5Ti_Xv-qgB_"> -->
+        <!-- <p id="page-title">The Train Schedule  <img id="right-image" class="img-fluid " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd3z3RyD1KK2OWkceI1F5HZ23rwTOjULUgqj-XA5Ti_Xv-qgB_"></p> -->
+
+
+
+        <!--HTML FOR TABLE DISPLAYING TRAINS-->
+
+
+        <table class="table" id = "train-table">
+            <thead class="bg-dark text-light">
+                <tr>
+                    <th scope="col">Train Name</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Frequency (min)</th>
+                    <th scope="col">First Arrival</th>
+                    <th scope="col">Minutes Away</th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                <!-- <td class="append-name"></td>
+                <td class="append-destination"></td>
+                <td class="append-arrival"></td>
+                <td class="append-frequency"></td> -->
+    
+            </tbody>
+               
+        </table>
+
+        <br>
+        <br>
+
+        <!--HTML FOR INPUT FORM TO ADD TRAINS-->
+
+        <h4 class="page-header bg-dark text-light">Add a Train</h4>
+        <form role="form">
+
+            <div class="form-group float-label-control">
+                <label class="train-name">Train Name</label>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                    </div>
+                    <input id="train-input" type="input" class="form-control" placeholder="What's it called?">
+                </div>
+                <div class="form-group float-label-control">
+                    <label for="train-destination">Destination (City, State)</label>
+                    <input id="train-destination" type="input" class="form-control" placeholder="Where's it going?">
+                </div>
+                <div class="form-group float-label-control">
+                    <label for="train-arrival">First Arrival Time (hh:mm - 24 Hour Time)</label>
+                    <input id="train-arrival" type="text" class="form-control" placeholder="How long 'til it gets here?">
+                </div>
+                <div class="form-group float-label-control">
+                    <label for="train-frequency">Frequency (Minutes)</label>
+                    <input id="train-frequency" type="number" class="form-control" placeholder="When's the one after that?" data-format="HH:mm" data-template="HH : mm" name="datetime">
+                </div>
+                <button id="add-train-button" type="button" class="btn btn-secondary btn-lg bg-dark col-sm-2 text-center">Add To Schedule</button>
+        </form>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+
+    </div>
+   <script src="assets/javascript/js.js"></script>
+   
+</body>
+
+</html>
